@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using ServerLibrary;
+using Newtonsoft.Json.Linq;
+using System.Threading;
 
 namespace MTP_project
 {
@@ -56,6 +59,16 @@ namespace MTP_project
             RegistrationForm s = new RegistrationForm();
             s.ShowDialog();
             this.Close();
+        }
+
+        private async void button1_Click(object sender, EventArgs e) {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            var user = new User(textBox1.Text, textBox2.Text);
+            var answer = await user.Enter();
+            MessageBox.Show(answer.ToString());
+            button1.Enabled = true;
+            button2.Enabled = true;
         }
     }
 }

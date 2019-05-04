@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using ServerLibrary;
 
 namespace MTP_project
 {
@@ -92,6 +93,30 @@ namespace MTP_project
                 Password_textBox.ForeColor = Color.Black;
                 Password_textBox.UseSystemPasswordChar = true;
             }
+        }
+
+        private async void textBox2_LeaveAsync(object sender, EventArgs e) {
+            var user = new User(textBox2.Text, textBox4.Text, textBox1.Text);
+            var answer = await user.VerifyLogin();
+            MessageBox.Show(answer.ToString());
+        }
+
+        private async void textBox4_Leave(object sender, EventArgs e) {
+            var user = new User(textBox2.Text, textBox4.Text, textBox1.Text);
+            var answer = await user.VerifyPassword();
+            MessageBox.Show(answer.ToString());
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e) {
+            if (!textBox3.Text.Equals(textBox4.Text)) {
+                MessageBox.Show("Passwords are not matched.");
+            }
+        }
+
+        private async void button1_Click(object sender, EventArgs e) {
+            var user = new User(textBox2.Text, textBox4.Text, textBox1.Text);
+            var answer = await user.Save();
+            MessageBox.Show(answer.ToString());
         }
     }
 }
