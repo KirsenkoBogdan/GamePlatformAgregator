@@ -95,26 +95,26 @@ namespace MTP_project
             }
         }
 
-        private async void textBox2_LeaveAsync(object sender, EventArgs e) {
-            var user = new User(textBox2.Text, textBox4.Text, textBox1.Text);
+        private async void Login_textBox_Leave(object sender, EventArgs e) {
+            var user = new User(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
             var answer = await user.VerifyLogin();
             MessageBox.Show(answer.ToString());
         }
 
-        private async void textBox4_Leave(object sender, EventArgs e) {
-            var user = new User(textBox2.Text, textBox4.Text, textBox1.Text);
+        private async void Password_textBox_Leave(object sender, EventArgs e) {
+            var user = new User(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
             var answer = await user.VerifyPassword();
             MessageBox.Show(answer.ToString());
         }
 
-        private void textBox3_Leave(object sender, EventArgs e) {
-            if (!textBox3.Text.Equals(textBox4.Text)) {
+        private void ConfirmPassword_textBox_Leave(object sender, EventArgs e) {
+            if (!Password_textBox.Text.Equals(ConfirmPassword_textBox.Text)) {
                 MessageBox.Show("Passwords are not matched.");
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e) {
-            var user = new User(textBox2.Text, textBox4.Text, textBox1.Text);
+        private async void Register_button_Click(object sender, EventArgs e) {
+            var user = new User(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
             var answer = await user.Save();
             MessageBox.Show(answer.ToString());
         }

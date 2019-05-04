@@ -47,12 +47,6 @@ namespace MTP_project
             Application.Exit();
         }
 
-
-        private void Enter_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ToRegister_button_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -61,14 +55,14 @@ namespace MTP_project
             this.Close();
         }
 
-        private async void button1_Click(object sender, EventArgs e) {
-            button1.Enabled = false;
-            button2.Enabled = false;
-            var user = new User(textBox1.Text, textBox2.Text);
+        private async void Enter_button_Click(object sender, EventArgs e) {
+            Enter_button.Enabled = false;
+            Exit_button.Enabled = false;
+            var user = new User(Login_textBox.Text, Password_textBox.Text);
             var answer = await user.Enter();
             MessageBox.Show(answer.ToString());
-            button1.Enabled = true;
-            button2.Enabled = true;
+            Enter_button.Enabled = true;
+            Exit_button.Enabled = true;
         }
     }
 }
