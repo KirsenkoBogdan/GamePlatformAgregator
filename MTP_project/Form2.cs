@@ -67,11 +67,31 @@ namespace MTP_project
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Back_button_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Hide();
             AuthorizationForm af1 = new AuthorizationForm();
             af1.ShowDialog();
+            this.Close();
+        }
+      
+        
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+
+            Password_textBox.ForeColor = Color.Gray;
+            Password_textBox.Text = "Must contain 1 capital letter, number and special character";
+        }
+
+        private void Password_textBox_Enter(object sender, EventArgs e)
+        {
+            if (Password_textBox.Text == "Must contain 1 capital letter, number and special character")
+            {
+                Password_textBox.Text = String.Empty;
+                Password_textBox.ForeColor = Color.Black;
+                Password_textBox.UseSystemPasswordChar = true;
+            }
         }
     }
 }
