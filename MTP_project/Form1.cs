@@ -23,27 +23,39 @@ namespace MTP_project
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void ShowPassword_checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            textBox2.UseSystemPasswordChar = (sender as CheckBox).Checked;
+            {
+                if (ShowPassword_checkBox.Checked)
+                {
+                    Password_textBox.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    Password_textBox.UseSystemPasswordChar = true;
+                }
+            };
         }
         
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Hide();
-            RegistrationForm s = new RegistrationForm();
-            s.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void Exit_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+        private void Enter_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToRegister_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegistrationForm s = new RegistrationForm();
+            s.ShowDialog();
+            this.Close();
         }
     }
 }
