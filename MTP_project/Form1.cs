@@ -23,7 +23,7 @@ namespace MTP_project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Connection.NEVER_EAT_POISON_Disable_CertificateValidation();
         }
 
 
