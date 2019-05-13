@@ -9,14 +9,19 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace ServerLibrary {
     public static class Connection {
         private static readonly HttpClient client = new HttpClient();
-        private static readonly string host = "https://192.168.0.106:81";
+        private static readonly string host = "http://"+ConfigurationManager.AppSettings.Get("IP") + ":" + ConfigurationManager.AppSettings.Get("Port");
+
+        public static void Init() {
+            client.Timeout = TimeSpan.FromSeconds(100);
+        }
 
         public static async Task<JObject> Post(string url, Dictionary<string, string> dictionary) {
-            client.Timeout = TimeSpan.MaxValue;
             var content = new FormUrlEncodedContent(dictionary);
             var copy = content.ReadAsStringAsync().Result;
             var fullurl = host + "/" + url + "/?" + copy;
@@ -26,7 +31,6 @@ namespace ServerLibrary {
         }
 
         public static async Task<JObject> Get(string url, string parameter) {
-            client.Timeout = TimeSpan.MaxValue;
             var fullurl = host + "/" + url + "/" + parameter;
             var responseString = await client.GetStringAsync(fullurl);
             return JObject.Parse(responseString);
