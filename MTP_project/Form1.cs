@@ -62,6 +62,7 @@ namespace MTP_project
             var user = new User(Login_textBox.Text, Password_textBox.Text);
             var answer = await user.Enter();
             MessageBox.Show(answer.ToString());
+            ResponseLabel.Text = (string)answer["Message"];
             Enter_button.Enabled = true;
             Exit_button.Enabled = true;
         }
