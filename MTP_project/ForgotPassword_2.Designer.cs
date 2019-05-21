@@ -59,6 +59,7 @@
             this.ConfirmTempPassword_button.TabIndex = 2;
             this.ConfirmTempPassword_button.Text = "Confirm";
             this.ConfirmTempPassword_button.UseVisualStyleBackColor = true;
+            this.ConfirmTempPassword_button.Click += new System.EventHandler(this.ConfirmTempPassword_button_Click);
             // 
             // ForgotPassword_2
             // 

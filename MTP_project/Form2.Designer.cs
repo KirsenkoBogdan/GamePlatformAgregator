@@ -35,6 +35,10 @@
             this.Back_button = new System.Windows.Forms.Button();
             this.LoginAddition_label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.LoginCheckLabel = new System.Windows.Forms.Label();
+            this.ConfirmPasswordLabel = new System.Windows.Forms.Label();
+            this.PasswordCheckLabel = new System.Windows.Forms.Label();
+            this.ResponseLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Email_label
@@ -153,12 +157,48 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Registration from";
             // 
+            // LoginCheckLabel
+            // 
+            this.LoginCheckLabel.AutoSize = true;
+            this.LoginCheckLabel.Location = new System.Drawing.Point(233, 180);
+            this.LoginCheckLabel.Name = "LoginCheckLabel";
+            this.LoginCheckLabel.Size = new System.Drawing.Size(0, 13);
+            this.LoginCheckLabel.TabIndex = 13;
+            // 
+            // ConfirmPasswordLabel
+            // 
+            this.ConfirmPasswordLabel.AutoSize = true;
+            this.ConfirmPasswordLabel.Location = new System.Drawing.Point(236, 296);
+            this.ConfirmPasswordLabel.Name = "ConfirmPasswordLabel";
+            this.ConfirmPasswordLabel.Size = new System.Drawing.Size(0, 13);
+            this.ConfirmPasswordLabel.TabIndex = 14;
+            // 
+            // PasswordCheckLabel
+            // 
+            this.PasswordCheckLabel.AutoSize = true;
+            this.PasswordCheckLabel.Location = new System.Drawing.Point(233, 231);
+            this.PasswordCheckLabel.Name = "PasswordCheckLabel";
+            this.PasswordCheckLabel.Size = new System.Drawing.Size(0, 13);
+            this.PasswordCheckLabel.TabIndex = 15;
+            // 
+            // ResponseLabel
+            // 
+            this.ResponseLabel.AutoSize = true;
+            this.ResponseLabel.Location = new System.Drawing.Point(101, 335);
+            this.ResponseLabel.Name = "ResponseLabel";
+            this.ResponseLabel.Size = new System.Drawing.Size(0, 13);
+            this.ResponseLabel.TabIndex = 16;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(523, 463);
+            this.Controls.Add(this.ResponseLabel);
+            this.Controls.Add(this.PasswordCheckLabel);
+            this.Controls.Add(this.ConfirmPasswordLabel);
+            this.Controls.Add(this.LoginCheckLabel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LoginAddition_label);
             this.Controls.Add(this.Back_button);
@@ -195,5 +235,9 @@
         private System.Windows.Forms.Button Back_button;
         private System.Windows.Forms.Label LoginAddition_label;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LoginCheckLabel;
+        private System.Windows.Forms.Label ConfirmPasswordLabel;
+        private System.Windows.Forms.Label PasswordCheckLabel;
+        private System.Windows.Forms.Label ResponseLabel;
     }
 }

@@ -16,5 +16,9 @@ namespace MTP_project
         {
             InitializeComponent();
         }
+
+        private void ConfirmTempPassword_button_Click(object sender, EventArgs e) {
+            
+        }
     }
 }

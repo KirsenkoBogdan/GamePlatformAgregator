@@ -15,7 +15,8 @@ using System.Collections.Specialized;
 namespace ServerLibrary {
     public static class Connection {
         private static readonly HttpClient client = new HttpClient();
-        private static readonly string host = "http://"+ConfigurationManager.AppSettings.Get("IP") + ":" + ConfigurationManager.AppSettings.Get("Port");
+        private static readonly string host = ConfigurationManager.AppSettings.Get("Type") + "://"+
+            ConfigurationManager.AppSettings.Get("IP") + ":" + ConfigurationManager.AppSettings.Get("Port");
 
         public static void Init() {
             client.Timeout = TimeSpan.FromSeconds(100);
