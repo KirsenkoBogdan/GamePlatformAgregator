@@ -50,8 +50,8 @@ namespace MTP_project {
         private async void Enter_button_Click(object sender, EventArgs e) {
             Enter_button.Enabled = false;
             Exit_button.Enabled = false;
-            var user = new User(Login_textBox.Text, Password_textBox.Text);
-            var answer = await user.Enter();
+            User.SetUser(Login_textBox.Text, Password_textBox.Text);
+            var answer = await User.Enter();
             ResponseLabel.Text = (string)answer["message"]["Message"];
             Enter_button.Enabled = true;
             Exit_button.Enabled = true;

@@ -79,14 +79,14 @@ namespace MTP_project {
         }
 
         private async void Login_textBox_Leave(object sender, EventArgs e) {
-            var user = new User(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
-            var answer = await user.VerifyLogin();
+            User.SetUser(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
+            var answer = await User.VerifyLogin();
             LoginCheckLabel.Text = (string)answer["message"]["Message"];
         }
 
         private async void Password_textBox_Leave(object sender, EventArgs e) {
-            var user = new User(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
-            var answer = await user.VerifyPassword();
+            User.SetUser(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
+            var answer = await User.VerifyPassword();
             PasswordCheckLabel.Text = (string)answer["message"]["Message"];
         }
 
@@ -99,10 +99,11 @@ namespace MTP_project {
         }
 
         private async void Register_button_Click(object sender, EventArgs e) {
-            var user = new User(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
-            var answer = await user.Save();
+            User.SetUser(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
+            var answer = await User.Save();
             ResponseLabel.Text = (string)answer["message"]["Message"];
             if ((bool)answer["answer"]) {
+                await User.GetEmailVerif();
                 this.Hide();
                 ForgotPassword_2 s = new ForgotPassword_2();
                 s.ShowDialog();
