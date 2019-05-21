@@ -38,6 +38,7 @@
             this.ToRegister_button = new System.Windows.Forms.Button();
             this.Exit_button = new System.Windows.Forms.Button();
             this.ResponseLabel = new System.Windows.Forms.Label();
+            this.ForgotPassword_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login_label
@@ -142,12 +143,28 @@
             this.ResponseLabel.Size = new System.Drawing.Size(0, 13);
             this.ResponseLabel.TabIndex = 10;
             // 
+            // ForgotPassword_button
+            // 
+            this.ForgotPassword_button.BackColor = System.Drawing.Color.Teal;
+            this.ForgotPassword_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ForgotPassword_button.FlatAppearance.BorderSize = 0;
+            this.ForgotPassword_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ForgotPassword_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ForgotPassword_button.Location = new System.Drawing.Point(74, 366);
+            this.ForgotPassword_button.Name = "ForgotPassword_button";
+            this.ForgotPassword_button.Size = new System.Drawing.Size(246, 24);
+            this.ForgotPassword_button.TabIndex = 11;
+            this.ForgotPassword_button.Text = "Forgot your password? Click here";
+            this.ForgotPassword_button.UseVisualStyleBackColor = false;
+            this.ForgotPassword_button.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(387, 407);
+            this.Controls.Add(this.ForgotPassword_button);
             this.Controls.Add(this.ResponseLabel);
             this.Controls.Add(this.Exit_button);
             this.Controls.Add(this.ToRegister_button);
@@ -180,6 +197,7 @@
         private System.Windows.Forms.Button ToRegister_button;
         private System.Windows.Forms.Button Exit_button;
         private System.Windows.Forms.Label ResponseLabel;
+        private System.Windows.Forms.Button ForgotPassword_button;
     }
 }
 

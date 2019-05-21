@@ -65,6 +65,13 @@ namespace MTP_project
             ResponseLabel.Text = (string)answer["Message"];
             Enter_button.Enabled = true;
             Exit_button.Enabled = true;
+            MainForm m = new MainForm();
+            m.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
