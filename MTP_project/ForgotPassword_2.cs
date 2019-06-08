@@ -25,7 +25,7 @@ namespace MTP_project
             ConfirmTempPassword_button.Enabled = true;
             if ((bool)answer["answer"]) {
                 this.Hide();
-                AuthorizationForm s = new AuthorizationForm();
+                Form s = Application.OpenForms["Form1"];
                 s.ShowDialog();
                 this.Close();
             }
