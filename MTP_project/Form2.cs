@@ -71,7 +71,7 @@ namespace MTP_project {
         }
 
         private void Password_textBox_Enter(object sender, EventArgs e) {
-            if (Password_textBox.Text == "Must contain 1 capital letter, number and special character") {
+            if (Password_textBox.Text == "Must contain capital letter(s) and number(s)") {
                 Password_textBox.Text = String.Empty;
                 Password_textBox.ForeColor = Color.Black;
                 Password_textBox.UseSystemPasswordChar = true;
@@ -79,15 +79,19 @@ namespace MTP_project {
         }
 
         private async void Login_textBox_Leave(object sender, EventArgs e) {
-            User.SetUser(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
-            var answer = await User.VerifyLogin();
-            LoginCheckLabel.Text = (string)answer["message"]["Message"];
+            if (Login_textBox.Text != "") {
+                User.SetUser(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
+                var answer = await User.VerifyLogin();
+                LoginCheckLabel.Text = (string)answer["message"]["Message"];
+            }
         }
 
         private async void Password_textBox_Leave(object sender, EventArgs e) {
-            User.SetUser(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
-            var answer = await User.VerifyPassword();
-            PasswordCheckLabel.Text = (string)answer["message"]["Message"];
+            if (Password_textBox.Text != "") {
+                User.SetUser(Login_textBox.Text, Password_textBox.Text, Email_textBox.Text);
+                var answer = await User.VerifyPassword();
+                PasswordCheckLabel.Text = (string)answer["message"]["Message"];
+            }
         }
 
         private void ConfirmPassword_textBox_Leave(object sender, EventArgs e) {

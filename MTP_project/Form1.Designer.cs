@@ -39,6 +39,7 @@
             this.Exit_button = new System.Windows.Forms.Button();
             this.ResponseLabel = new System.Windows.Forms.Label();
             this.ForgotPassword_button = new System.Windows.Forms.Button();
+            this.TECH = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login_label
@@ -158,12 +159,23 @@
             this.ForgotPassword_button.UseVisualStyleBackColor = false;
             this.ForgotPassword_button.Click += new System.EventHandler(this.button1_Click);
             // 
+            // TECH
+            // 
+            this.TECH.Location = new System.Drawing.Point(310, 382);
+            this.TECH.Name = "TECH";
+            this.TECH.Size = new System.Drawing.Size(75, 23);
+            this.TECH.TabIndex = 12;
+            this.TECH.Text = "TECH";
+            this.TECH.UseVisualStyleBackColor = true;
+            this.TECH.Click += new System.EventHandler(this.TECH_Click);
+            // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(387, 407);
+            this.Controls.Add(this.TECH);
             this.Controls.Add(this.ForgotPassword_button);
             this.Controls.Add(this.ResponseLabel);
             this.Controls.Add(this.Exit_button);
@@ -198,6 +210,7 @@
         private System.Windows.Forms.Button Exit_button;
         private System.Windows.Forms.Label ResponseLabel;
         private System.Windows.Forms.Button ForgotPassword_button;
+        private System.Windows.Forms.Button TECH;
     }
 }
 

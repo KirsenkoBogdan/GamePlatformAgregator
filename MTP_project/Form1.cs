@@ -64,5 +64,12 @@ namespace MTP_project {
         private void button1_Click(object sender, EventArgs e) {
 
         }
+
+        private void TECH_Click(object sender, EventArgs e) {
+            this.Hide();
+            MainForm s = new MainForm();
+            s.ShowDialog();
+            this.Close();
+        }
     }
 }
