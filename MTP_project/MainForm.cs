@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CefSharp;
+using ServerLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +22,19 @@ namespace MTP_project
         }
 
         private void RegisterGogButton_Click(object sender, EventArgs e) {
-            browser = new CefSharp.WinForms.ChromiumWebBrowser("https://login.gog.com/login") {
-                Size = new Size(600, 400),
-                Location = new Point(500, 100)
-            };
-            WebPanel.Controls.Add(browser);
+            ChromiumWebBrowser.Load(EnterPlatform.OAuthString());
+        }
+
+        private void ChromiumWebBrowser_AddressChanged(object sender, AddressChangedEventArgs e) {
+            MessageBox.Show(e.Address);
+            if (e.Address.IndexOf("https://embed.gog.com/on_login_success") == 0) {
+                var usercode = LoginSuccessParse(e.Address);
+            }
+        }
+
+        private string LoginSuccessParse(string address) {
+            var start = address.IndexOf("code=");
+            return address.Substring(start + "code=".Length);
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.RegisterGogButton = new System.Windows.Forms.Button();
-            this.WebPanel = new System.Windows.Forms.Panel();
+            this.ChromiumWebBrowser = new CefSharp.WinForms.ChromiumWebBrowser();
             this.SuspendLayout();
             // 
             // RegisterGogButton
@@ -42,12 +42,13 @@
             this.RegisterGogButton.UseVisualStyleBackColor = true;
             this.RegisterGogButton.Click += new System.EventHandler(this.RegisterGogButton_Click);
             // 
-            // WebPanel
+            // ChromiumWebBrowser
             // 
-            this.WebPanel.Location = new System.Drawing.Point(412, 30);
-            this.WebPanel.Name = "WebPanel";
-            this.WebPanel.Size = new System.Drawing.Size(347, 397);
-            this.WebPanel.TabIndex = 2;
+            this.ChromiumWebBrowser.Location = new System.Drawing.Point(418, 28);
+            this.ChromiumWebBrowser.Name = "ChromiumWebBrowser";
+            this.ChromiumWebBrowser.Size = new System.Drawing.Size(347, 397);
+            this.ChromiumWebBrowser.TabIndex = 3;
+            this.ChromiumWebBrowser.AddressChanged += new System.EventHandler<CefSharp.AddressChangedEventArgs>(this.ChromiumWebBrowser_AddressChanged);
             // 
             // MainForm
             // 
@@ -55,7 +56,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.WebPanel);
+            this.Controls.Add(this.ChromiumWebBrowser);
             this.Controls.Add(this.RegisterGogButton);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -65,6 +66,6 @@
 
         #endregion
         private System.Windows.Forms.Button RegisterGogButton;
-        private System.Windows.Forms.Panel WebPanel;
+        private CefSharp.WinForms.ChromiumWebBrowser ChromiumWebBrowser;
     }
 }
